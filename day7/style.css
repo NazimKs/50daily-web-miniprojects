@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --left-bg-color : rgba(87,84,236,0.7);
+  --right-bg-color : rgba(43,43,43,0.8);
+  --left-hover-color: rgba(87,84,236,1);
+  --right-hover-color: rgba(28,122,2,1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  white-space: nowrap;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+
+.btn {
+  color: #fff;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  border: #fff solid 0.2rem;
+  width: 15rem;
+  font-size: 1rem;
+  padding: 1.5rem;
+  text-transform: uppercase;
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-hover-color);
+  border: var(--left-hover-color);
+} 
+
+.split.right .btn:hover {
+  background-color: var(--right-hover-color);
+  border: var(--right-hover-color);
+} 
+
+.container {
+  background-color: #333;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.split.left {
+  background-image: url('./ps.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+}
+
+.split.left::before {
+  content: '';
+  background-color: var(--left-bg-color);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.split.right {
+  background-image: url('./xbox.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 0;
+}
+
+.split.right::before {
+  content: '';
+  background-color: var(--right-bg-color);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+
+.hover-left .left{
+  width: 75%;
+}
+
+.hover-left .right{
+  width: 25%;
+}
+
+.hover-right .right{
+  width: 75%;
+}
+
+.hover-right .left{
+  width: 25%;
+}
+
+.split.left, .split.right, .split.left::before, .split.right::before {
+  transition: all 1s ease-in-out;
+}
+
+
+@media (max-width: 800px){
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+}
+
+
